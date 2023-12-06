@@ -1,0 +1,80 @@
+Variáveis são nomes que pontam para uma determinada informação; o shell permite criar, apagar e atribuir.
+
+Para criar uma variavel, definimos como "="
+
+fruta="banana"
+nota=10
+nomes=("João" "José" "Renata")
+
+Variáveis podem ser criados através de comando interno "read" -> O comando lê as informações que o usuário digita no terminal e as armazena na variável
+
+Exemplo:
+
+!/usr/bin/env bash
+
+read -p "Digite seu nome: " nome
+echo "Satisfação, $nome!"
+
+Os nomes de variáveis só podem conter:
+
+* Letras maiúsculos e minúsculos de A a Z
+* Números
+* Sublinhado "_"
+
+Existem 3 tipos de variáveis:
+
+Locais: presentes apenas na sessão corrente do shell e dísponiveis apenas para ele
+
+Ambiente: dísponiveis para todos os processos executando no shell
+
+Especiais: que o própio shell define podendo ser tanto locais qunato ambinete
+
+* declare -i -- declara variável do tipo inteiro
+* declare -A -- declara arrays associativas
+* declare -p -- exibe os atributos da variável
+
+Armazena o último caminho acessado $-
+
+Armazena PID da sessão corrente do shell: $$
+
+Armazena o status de saída de comando do último comando: $?
+
+Armazena o nome do programa executado: $0
+
+$n (1 - ...) o número atribuído aos argumentos perla ordem de ocorrência
+
+Armazena o número de argumentos passados para o script: $#
+
+fruta=("Banana" "Laranja" "Morango" "Uva")
+
+echo $fruta // primeiro elemento array
+
+echo ${fruta[2]} // Laranja // exibe o elemento do array
+
+nome="Manuel"
+echo "${nome} sou eu" // Manuel sou eu
+
+echo ${aluno[*|@]} // informa elementos do array// Lucas Bi ji Antônio
+echo ${#aluno[*|@]} // informa qtd de elementos// 4
+
+echo ${!aluno[*|@]} // 1 2 3 22 // exibe todos os indices em uso no array
+
+declare -i v1
+declare -i v2
+declare -i v3
+v3=v1+v2
+echo $v3//0
+v1=33
+v2=7
+v3=v1+v2
+echo $v3//40
+
+(( valor = valor+13, valor = valor + 47 ))//echo $valor 80
+
+let "valor = $valor + 13, valor*=2"// let "valor = $valor + 13, valor*=2"
+
+echo $(( 2+2 ))
+4
+
+\: coloca no echo pra quebrar linhas
+

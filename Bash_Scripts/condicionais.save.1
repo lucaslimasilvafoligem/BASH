@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+clear
+
+echo "O objetivo desse script é comparar o seu número como número '5'."
+
+
+read -p "Insira um número de 1 a 10: " numero
+
+# Verificar se foi passado um argumento
+[[ $# -ne 1 ]] && echo "Tem de ser passado apenas um argumento" exit 1
+
+# É um número
+[[ $numero =~ ^[0-9]+$ ]]
+
+#É um número entre 11 e 0
+[[ $numero -lt 5 || $numero -gt 5 ]]
+
+# É igual a 5
+[[ $numero -eq 5 ]] && echo "É igual a 5" exit 0
+
+# É menor que 5
+[[ $numero -lt 5 ]] && echo "É menor que 5" exit 1
+
+# É maior 5
+[[ $numero -gt 5 ]] && echo "É maior que 5" exit 1 

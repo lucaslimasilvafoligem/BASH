@@ -1,0 +1,165 @@
+env: Lista todas as variáveis de ambiente
+
+echo: Escreve na tela
+
+echo -n: Print sem quebrar linha
+
+echo $$: Exibe PID da sessão
+
+echo $?: Informa se o ultimo comando teve sucesso ou não, sucesso == 0, fracasso !=0
+hostname: Nome da máquina
+
+uptime -p: Tempo que a máquina está ligada
+
+comando > arquivo: Insere a saída de um comando anterior no arquivo 
+
+&> : Saída padrão e de erro
+
+blade; chmod +x blade: Utilizado para manipular permissões de um utilitário/ -x: remove
+
+readonly: Váriavel somente leitura
+
+read -p "texto" n: Exibe um texto e recebe uma entrada
+
+ps u: Informa os processos que estão em execução
+
+test $? -eq 0: -eq indica se são iguais [[ -eq ]]
+
+[[-ne]]: not equals // teste == [[]]
+
+[[ $numero -lt 5 ]]: menor que 5
+
+[[ $numero -gt 5 ]]: maior que 5
+
+[[ $numero -gt 5 ]]: menor ou igual 5
+
+date: retorna a data de hoje com -> dia da semana, mês e dia, horário e ano
+
+date +'%d'; dia do mês
+
+date +'%d %B': dia e nome do mês d nome do mês
+
+date +'%d %b': dia do mês e sigla do mês
+
+date +'%d %m': dia do mês e número do mês
+
+date +'%d %B %Y': dia do mês, nome do mês e ano. É possível por strings no meio
+
+mv: mover
+
+rm: remover arquivo
+
+rm -r: remover diretorio
+
+cp: copiar para
+
+export: define uma variavel para todo o sistema
+
+ps -p $PPID: Indica pai do processo em execução
+
+ps -p $$,$PPID: pai e filho
+
+=~: Indica que é uma REGEX
+
+fruta=("Banana" "Laranja" "Morango" "Uva"): declarar array
+
++=: Operador de atribuição//concatenna
+
+id++, id--, ++id, --id: pós-acréscim e pós-decréscimo
+
+-, +: menos e mais unário/ subtração e adição
+
+!, ~: negação lógica e bit-a-bit
+
+**: exponiação
+
+*, /, %: multiplicação, divisão, restp da divisão
+
+<<, >>: deslocamento bit-abit para esquerda, direita
+
+<=, >=. <, > comparação
+
+==, !=: igualdade, desigualdade
+
+&:  And bit-a-bit
+
+^: xor bit-a-bit
+
+|: or bot-a-bit
+
+&&: and lógico
+
+||: or lógico
+
+expr ? expr : expr : operador condicional
+
+=, *=, /=, %=, +=, -=, <<=, >>=, &=, ^=, |= : atribuição
+
+\: coloca no echo pra quebrar linhas
+
+ls *.sh: Busca por um padrão especifico ignorando o que vem antes ou depois, dependendo da posição do *
+
+echo Lucas{1..4} Lucas1 Lucas2 Lucas3 Lucas4
+
+echo ${fruta^^}
+FRUTA=MACA
+
+echo a*.sh
+al.sh array_associativo.sh
+ls a*.sh
+al.sh  array_associativo.sh
+
+?: um único
+
+*: zero ou mais
+
+[]: lista de cacacteres válidos
+
+echo *.??
+al.sh array_associativo.sh builtin.sh condicionais.sh declaracao_atributos.sh entrada.sh operacoes_aritmeticas.sh saida.sh variavel.sh
+
+echo v[a]*
+variaveis variavel.sh
+echo v[ar]*
+variaveis variavel.sh
+
+echo ???[a]*
+array_associativo.sh
+
+mkdir teste{1..5}
+~ls
+al.sh                 declaracao_atributos.sh       teste3
+array_associativo.sh  declaracao_atributos.sh.save  teste4
+builtin.sh            entrada.sh                    teste5
+CB                    operacoes_aritmeticas.sh      variaveis
+condicionais.save     saida.sh                      variavel.sh
+condicionais.save.1   teste1
+condicionais.sh       teste2
+rm -r teste{1..5}
+
+touch: modifica ou cria caso não exista
+
+touch {ba,mor,car}anga.txt
+baranga.txt moranga.txt caranga.txt
+
+touch {b..f}anga.txt
+
+IFS:Quebra linhas com base em caerta característica
+
+echo {$fruta} informa a quantidade de caracteres do valor da variável
+
+echo ${msg:3}
+4hdkwo
+echo ${msg:6}
+kwo
+echo ${msg}
+1234hdkwo
+echo ${msg: -6}
+4hdkwo
+echo ${msg:6: -2}
+k
+echo ${msg:-6: 2}
+1234hdkwo
+echo ${msg: -6:2}
+4h
+

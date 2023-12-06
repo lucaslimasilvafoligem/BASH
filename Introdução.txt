@@ -1,0 +1,42 @@
+Hardware <---> [ Kernel | Shell ] <---> Usuário
+                Sistema operacional    ^
+                                       |
+                Via yerminal/console --+
+
+* O shell é um interpretadr de comandos
+
+* Esses comandos podem vir da entrada padrão (terminal) ou de um arquivo (script)
+
+Além de permitir a execução de comandos, o shell possui os mesmis recursos de qua
+lquer linguagem de progamação de alto nível, como:
+
+* Manipulação de váriaveis
+* Estruturas de controle de fluxo
+* Laços de repetição (loops), etc...
+
+Essas características permite criar scripts, automatizar tarefas e criar programa
+s para as mais diversas finalidades
+
+Se comandos devem ser executado com frequência, então faz sentido criar um script
+
+1.1 - Etapas de criação de um script:
+
+	1 - Criar arquivo:
+	
+		* O nome do arquivo
+		* E a extensão
+		* Onde criar o arquivo
+		* A variável PATH
+		* Como criar o arquivo
+		
+	2 - Editar o arquivo:
+	
+		* Editores de texto
+		* O interpretador de comandos
+		
+	3 - Tornar o arquivo executável:
+		
+		* Comando "chmod"
+		* Como saber se é executável
+		
+	1.1.2 - #!/urs/bin/env  bash 

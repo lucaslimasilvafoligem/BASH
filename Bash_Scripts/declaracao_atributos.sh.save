@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo "Utilizando a declaração do atributo de inteiro"
+
+read -p "Digite um número: " numero
+
+
+
+exit 0
