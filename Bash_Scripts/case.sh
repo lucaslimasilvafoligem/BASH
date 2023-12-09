@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
-fruta=morango
+read -p "Escreva o nome de uma fruta: " fruta
 
 case $fruta in
-	banana) echo "$fruta é amarela" ;;
-	morango) echo "$fruta é vermelho" ;;
-	abacate) echo "$fruta é verde" ;;
+	[Bb]an???|lara*) echo "$fruta é amarela"    ;;
+	morango|uva[ao]) echo "$fruta é vermelho"  ;;
+	abacate|pitanga) echo "$fruta é verde"     ;;
+	*) echo "Não sei a cor da fruta $1";;
 esac
 
 exit 0
