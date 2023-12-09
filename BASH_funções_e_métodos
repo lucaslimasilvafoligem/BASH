@@ -91,11 +91,15 @@ id++, id--, ++id, --id: pós-acréscim e pós-decréscimo
 
 ||: or lógico
 
-expr ? expr : expr : operador condicional
+{expr ? expr : expr} : operador condicional
 
 =, *=, /=, %=, +=, -=, <<=, >>=, &=, ^=, |= : atribuição
 
 \: coloca no echo pra quebrar linhas
+
+[[ ${#numero2} -lt 1 ]] && echo "Faltou passar um valor de operação" && exit 1
+
+[[ ! $numero1 =~ ^[0-9]+$ ]] && echo "Foi passado algo diferente de um número no argumento 1" && exit 1
 
 ls *.sh: Busca por um padrão especifico ignorando o que vem antes ou depois, dependendo da posição do *
 
@@ -137,6 +141,12 @@ condicionais.save.1   teste1
 condicionais.sh       teste2
 rm -r teste{1..5}
 
+echo gta{1..6..2}
+gta1 gta3 gta5
+
+echo gta{1..6}
+gta1 gta2 gta3 gta4 gta5 gta6
+
 touch: modifica ou cria caso não exista
 
 touch {ba,mor,car}anga.txt
@@ -162,4 +172,59 @@ echo ${msg:-6: 2}
 1234hdkwo
 echo ${msg: -6:2}
 4h
+
+echo ${nome:-valor} // retorna valor se nome não tem valor
+valor
+echo ${nome:=valor}  // atribui valor a nome, se nome não tem valor
+valor
+echo ${nome:+carro}
+carro
+echo ${nome:?mensagem} // Retorna o valor de nome, caso contrário retorna a mensagem
+valor
+
+echo ${nome^}
+Valor
+echo ${nome^^}
+VALOR
+echo ${nome,}
+valor
+echo ${nome,,}
+valor
+
+echo ${frutas# } 
+banana morango uva
+echo ${frutas#* }//exibe a direita da primeira ocorrência
+morango uva
+echo ${frutas##* }//exibe a esquerda da primeira ocorrência
+uva
+echo ${frutas##*o}
+uva
+echo ${frutas#*o}
+rango uva
+
+echo ${frutas%%a*}//o fim da string será aparado até a primeira ocorrência do padrão de trás pra frente
+b
+echo ${frutas%a*}// o fim da string será aparado até a última ocorrência do padrão de aatrás pra frente
+banana morango uv
+
+echo ${mensagem/Windows/Linux} //subistitui uma string ou padrão de strings por outra
+Use Linux e seja feliz
+echo ${mensagem/W*s/Linux}
+Use Linuxeja feliz
+echo ${mensagem/W*a/Linux}
+Use Linux feliz
+echo ${mensagem/W*s/Linux}
+Use Linuxeja feliz
+echo ${mensagem//W*s/Linux}// subistitui todos
+Use Linuxeja feliz
+lucas@lucas-Inspiron-3583:~/Bash/Bash_Scripts$ echo ${mensagem//e/Linux}
+UsLinux Windows Linux sLinuxja fLinuxliz
+echo ${mensagem/W*s /Linux}
+Use Linuxe seja feliz
+
+for nome [in lista]; do comandos; done //olhar o .sh de for
+
+>>: criar ou insere em um arquivo já criado
+
+[[ ${#veriUrl} -lt ${#url} ]] && echo "Deu errado" && exit 1
 
