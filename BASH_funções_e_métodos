@@ -228,3 +228,27 @@ for nome [in lista]; do comandos; done //olhar o .sh de for
 
 [[ ${#veriUrl} -lt ${#url} ]] && echo "Deu errado" && exit 1
 
+Pressione CTRL+A para mover o cursor para o inicio da linha de comandos.
+
+Pressione CTRL+E para mover o cursor para o fim da linha de comandos.
+
+Pressione CTRL+U para apagar o que estiver à esquerda do cursor. O conteúdo apagado é copiado para uso com CTRL+y.
+
+Pressione CTRL+K para apagar o que estiver à direita do cursor. O conteúdo apagado é copiado para uso com CTRL+y.
+
+Pressione CTRL+L para limpar a tela e manter o texto que estiver sendo digitado na linha de comando (parecido com o comando clear).
+
+Pressione CTRL+Y para colocar o texto que foi apagado na posição atual do cursor.
+
+[a-z][0-9] - Faz referência a caracteres de a até z seguido de um caracter de 0 até 9.
+
+[a,z][1,0] - Faz a referência aos caracteres a e z seguido de um caracter 1 ou 0 naquela posição.
+
+[a-z,1,0] - Faz referência a intervalo de caracteres de a até z ou 1 ou 0 naquela posição.
+
+Por exemplo [^abc] faz referência a qualquer caracter exceto a, b e c.
+
+X{ab,01} - Faz referência a seqüencia de caracteres Xab ou X01
+
+X{a-z,10} Faz referencia a seqüencia de caracteres Xa-z e X10.
+
