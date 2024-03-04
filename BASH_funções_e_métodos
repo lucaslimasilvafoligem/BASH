@@ -60,7 +60,6 @@ cat [opção] [arquivo ...]
  -b numera apenas linhas com conteúdo na saída
  ...
 
-Comandos de Manipulação
  head [opção] [arquivo]
  Imprime as primeiras linhas de um arquivo (default é 10)
  -n quantidade de linhas a serem exibidas
@@ -85,12 +84,47 @@ linha 28
 linha 29
 linha 30
 
+diff [opções] arquivos
+ Compara arquivos linha a linha
+ -i ignora diferenças de maiúsculas/minúsculas
+ -e ignora diferenças por tabulação
+ -w ignora todos os espaços em branco
+ ...
+
+
+grep [opção] [arquivo ...]
+ Exibe as linhas de um arquivo ou de um stream de entrada que
+correspondam a uma expressão
+ -a Trata todos os arquivos como ASCII
+ -c Conta quantas ocorrência existem da expressão
+# grep Mensagem arquivoTeste1.txt
+# ps –e | grep sh
 less [opção] [arquivo ...]
  Imprime os arquivos sequencialmente uma página de cada vez
 sem a necessidade de carrega-lo todo
  -bn ou –buffers=n Tamanho do buffer
  ...
 
+tar
+ Realiza o empacotamento de arquivos e diretórios em um único
+arquivo
+ -c Cria o novo arquivo com os itens especificados
+ -r Adiciona novos elementos aos arquivo (apenas descompactado)
+ -f Ler/escreve no arquivo especificado
+ -x Extrai o arquivo para o disco
+ -v Verboso
+ -z Compacta o conteúdo com gzip
+Exemplo:
+# tar –cvf teste1.tar diretório_teste/
+# tar –zcvf teste1.tar diretório_teste/
+
+file [file]
+ Descreve informação sobre o tipo do conteúdo do arquivo
+ Exemplos:
+# file /etc/fstab
+/etc/fstab: ASCII text
+# file /bin/cp
+/bin/cp: ELF 64-bit LSB executabl
 
 rm: remover arquivo
 
