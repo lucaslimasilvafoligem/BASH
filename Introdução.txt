@@ -1,7 +1,7 @@
 Hardware <---> [ Kernel | Shell ] <---> Usuário
                 Sistema operacional    ^
                                        |
-                Via yerminal/console --+
+                Via terminal/console --+
 
 * O shell é um interpretadr de comandos
 
@@ -40,3 +40,9 @@ Se comandos devem ser executado com frequência, então faz sentido criar um scr
 		* Como saber se é executável
 		
 	1.1.2 - #!/urs/bin/env  bash 
+
+1.2 - Arquivos e diretórios tem visibilidade:
+
+	1 - drwxr-xr-x  4 lucas.lima.silva users 4,0K mar  4 13:01 .
+		Dono|Grupo|Mundo 3 para cada; já o "d" na ponta esquerda indica que se trata de um diretório;
+		"-" arquivo regular  

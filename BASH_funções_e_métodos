@@ -45,13 +45,73 @@ date +'%d %m': dia do mês e número do mês
 
 date +'%d %B %Y': dia do mês, nome do mês e ano. É possível por strings no meio
 
-mv: mover
+mv: mover [origem] [destino]
+
+ -f não oferece confirmação para remoção.
+ -i solicita confirmação para sobrescrever arquivos.
+ -v mostra o nome dos arquivos movidos.
+Exemplo:
+# mv /root/agora /root/now
+# mv arq1.txt arq1_old.txt
+
+cat [opção] [arquivo ...]
+ Imprime os arquivos sequencialmente na saída padrão
+ -n numera as linhas na saída (inicia em cada arquivo em 1)
+ -b numera apenas linhas com conteúdo na saída
+ ...
+
+Comandos de Manipulação
+ head [opção] [arquivo]
+ Imprime as primeiras linhas de um arquivo (default é 10)
+ -n quantidade de linhas a serem exibidas
+ -c quantidade de bytes a serem exibidos
+Exemplo:
+# head –n 5 arquivoTeste1.txt
+linha 1
+linha 2
+linha 3
+linha 4
+linha 5
+
+tail [opção] [arquivo ...]
+ Imprime as últimas linhas de um arquivo (default é 10)
+ -n quantidade de linhas a serem exibidas
+ -c quantidade de bytes a serem exibidos
+ ...
+Exemplo:
+# tail –n 4 arquivoTeste1.txt
+linha 27
+linha 28
+linha 29
+linha 30
+
+less [opção] [arquivo ...]
+ Imprime os arquivos sequencialmente uma página de cada vez
+sem a necessidade de carrega-lo todo
+ -bn ou –buffers=n Tamanho do buffer
+ ...
+
 
 rm: remover arquivo
 
 rm -r: remover diretorio
 
-cp: copiar para
+sudo rm -r: Arquivo ou diretório com proteção
+
+ -f força a remoção dos arquivos
+ -i solicita confirmação para remover os arquivos.
+ -r remove os diretórios e seu conteúdo recursivamente.
+ -v mostra o nome dos arquivos movidos.
+
+cp: copiar de [origem] para [destino]
+ -f sobrescreve os arquivos de destino caso existam
+ -i solicita confirmação para sobrescrever arquivos
+ -P preserva as permissões e informações de data e hora
+ -R copia os diretórios recursivamente
+ -d copia links simbólicos e não arquivos para onde apontam
+Exemplo:
+# cp –Rf /etc/sysconfig /home/backup
+# cp arq1.txt arq1_copy.txt
 
 export: define uma variavel para todo o sistema
 
@@ -252,3 +312,5 @@ X{ab,01} - Faz referência a seqüencia de caracteres Xab ou X01
 
 X{a-z,10} Faz referencia a seqüencia de caracteres Xa-z e X10.
 
+touch criar um ou mais arquivos e suas respectivas extenções 
+touch –t 201409161940 aniversario
